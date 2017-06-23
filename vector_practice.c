@@ -23,6 +23,8 @@ struct Photon_Info{
 Photon_Info photon1_info; 
 Photon_Info photon2_info;
 Photon_Info photon3_info; 
+Photon_Info x; 
+Photon_Info y; 
 
 //Events
 Int_t Events;
@@ -90,3 +92,18 @@ for (auto i = triphoton.begin(); i != triphoton.end(); i++)
 
 }//end print_vector_contents 
 
+
+/*void sort_vector_contents(){
+
+//  bool is_lower_pt(double Photon_Info& photon1, double Photon_Info& photon2) {return photon1.pt < photon2.pt;}
+  struct is_lower_pt
+  {
+      bool operator()(double Photon_Info& x, double Photon_Info& y) const
+      {
+              return x.pt < y.pt; 
+          }
+  };
+  
+  sort(triphoton.begin(), triphoton.end(),is_lower_pt());
+
+}*/

@@ -92,18 +92,23 @@ for (auto i = triphoton.begin(); i != triphoton.end(); i++)
 
 }//end print_vector_contents 
 
+   bool cmd(const Photon_Info& p1, const Photon_Info& p2)
+    {
+      return p1.pt < p2.pt; 
+    }
 
-/*void sort_vector_contents(){
-
-//  bool is_lower_pt(double Photon_Info& photon1, double Photon_Info& photon2) {return photon1.pt < photon2.pt;}
-  struct is_lower_pt
-  {
-      bool operator()(double Photon_Info& x, double Photon_Info& y) const
-      {
-              return x.pt < y.pt; 
-          }
-  };
+void sort_vector_contents(){
+   
+   sort(triphoton.rbegin(), triphoton.rend(),cmd);
   
-  sort(triphoton.begin(), triphoton.end(),is_lower_pt());
+}// end sort_vector_contents
 
-}*/
+  bool ascending(const Photon_Info& p1, const Photon_Info & p2)
+{
+   return p1.pt > p2.pt; 
+}
+
+void sort_ascending_vector_contents(){
+  sort(triphoton.rbegin(), triphoton.rend(), ascending);
+}
+
